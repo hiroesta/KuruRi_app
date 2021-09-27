@@ -8,14 +8,13 @@
         <div class="card-header">Dashboard</div>
 
         @if(Session::has('message'))
-        <div>{{変更しました}}</div>
+        <div>変更しました</div>
         <button><a href="{{route('home')}}">ホームに戻る</a></button>
-        @endif
-
+        @else
         <form method="POST" action="http://localhost:8000/members/{id}/edit">
           @csrf
           <div>
-            名前：<input type="text" value="{{ $user->name }}" />
+            名前：<input type="text" name='name' value="{{ $user->name }}" />
           </div>
           <div>
             年齢：<select name="age" id="age" value="{{$user->age}}">
@@ -31,12 +30,13 @@
           </div>
 
           <div>
-            自己紹介文：<input type="textarea" value="{{$user->introduction}}">
+            自己紹介文：<input type="textarea" name='introduction' value="{{$user->introduction}}">
           </div>
 
           <button type="submit">変更</button>
         </form>
-
+        @endif
+        
       </div>
     </div>
   </div>

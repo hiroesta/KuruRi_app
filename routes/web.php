@@ -18,10 +18,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('members/{id}','UserController@show');
+Route::get('members/{id}','UserController@show')->name('profile');
 //ユーザープロフィールを表示
 
-Route::get('members/{id}/edit','UserController@edit');
+Route::get('members/{id}/edit','UserController@edit')->name('edit');
 //ユーザープロフィールの編集画面
 
 Route::post('members/{id}/edit','UserController@update');
+
+
+Route::get('group/create','GroupController@create');
+//グループの作成画面
+
+Route::post('group','GroupController@store');
+//グループ作成画面のデータ作成
