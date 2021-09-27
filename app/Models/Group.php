@@ -17,7 +17,7 @@ class Group extends Model
    * @var array
    */
   protected $fillable = [
-      'name', 'information', 'category_id' ,'master_id','password',
+      'name', 'information', 'category_id' ,'master_id',
   ];
 
   /**
@@ -26,16 +26,7 @@ class Group extends Model
    * @var array
    */
   protected $hidden = [
-      'password', 'remember_token',
-  ];
-
-  /**
-   * The attributes that should be cast to native types.
-   *
-   * @var array
-   */
-  protected $casts = [
-      'email_verified_at' => 'datetime',
+      'remember_token',
   ];
 
   public function master(){
@@ -45,4 +36,5 @@ class Group extends Model
   public function category(){
     return $this->belongsTo(Category::class);
   }
+
 }
