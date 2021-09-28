@@ -8,11 +8,11 @@
         <div class="card-header">{{ __('Register') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('register') }}">
+          <form method="POST" action="{{route('group_create')}}">
             @csrf
 
             <div class="form-group row">
-              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Group Name') }}</label>
 
               <div class="col-md-6">
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -39,51 +39,27 @@
               </div>
             </div>
 
-
-            <div class="form-group row">
-              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-              <div class="col-md-6">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-              </div>
-            </div>
-
             <div class="form-group row">
               <label for="categories" class="col-md-4 col-form-label text-md-right">{{ __('Select the Group Category') }}</label>
 
               <div class="col-md-6">
-                <select name="categories" id="categories" value="{{$user->age}}">
-                  <option value="<?php
-                  foreach($categories as $category){
-                    print('name');
-                  }
-                  ?>"></option>
+                <select name="categories" id="categories" value="">
                   <?php
                   foreach($categories as $category){
+                    print('<option id="category" type value="'.$category->id.'">'.$category->name.'</option>'); 
+                  }
                   ?>
                 </select>
             </div>
 
             <div class="form-group row">
-              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-              <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-              </div>
-            </div>
-
-            <div class="form-group row mb-0">
-              <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                  {{ __('Register') }}
+            <div class="form-group row mb-6">
+              <div class="col-md-4 offset-md-4">
+                <button type="submit">
+                  <a href="{{route('group_create')}}">{{ __('Register') }}</a>
                 </button>
               </div>
+            </div>
             </div>
           </form>
         </div>

@@ -27,8 +27,8 @@ Route::get('members/{id}/edit','UserController@edit')->name('edit');
 Route::post('members/{id}/edit','UserController@update');
 
 
-Route::get('group/create','GroupController@create');
+Route::get('group/create','GroupController@create')->name('create');
 //グループの作成画面
 
-Route::post('group','GroupController@store');
+Route::post('group','GroupController@store')->name('group_create');
 //グループ作成画面のデータ作成
