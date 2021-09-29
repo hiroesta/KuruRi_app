@@ -45,7 +45,8 @@
               <div class="col-md-6">
                 <select name="categories" id="categories" value="">
                   <?php
-                  foreach($categories as $category){
+                  foreach($categories as $category)
+                  {
                     print('<option id="category" type value="'.$category->id.'">'.$category->name.'</option>'); 
                   }
                   ?>
