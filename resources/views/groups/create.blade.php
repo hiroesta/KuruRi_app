@@ -8,7 +8,7 @@
         <div class="card-header">{{ __('Register') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="{{route('group_create')}}">
+          <form method="POST" action="{{ route('group_create') }}">
             @csrf
 
             <div class="form-group row">
@@ -43,25 +43,22 @@
               <label for="categories" class="col-md-4 col-form-label text-md-right">{{ __('Select the Group Category') }}</label>
 
               <div class="col-md-6">
-                <select name="categories" id="categories" value="">
-                  <?php
-                  foreach($categories as $category)
-                  {
-                    print('<option id="category" type value="'.$category->id.'">'.$category->name.'</option>'); 
-                  }
-                  ?>
+                <select name="category_id" id="categories" value="">
+                  @foreach($categories as $category)
+                  <option id="category" value="{{ $category->id }}">{{ $category->name }}</option>
+                  @endforeach
                 </select>
-            </div>
-
-            <div class="form-group row">
-            <div class="form-group row mb-6">
-              <div class="col-md-4 offset-md-4">
-                <button type="submit">
-                  <a href="{{route('group_create')}}">{{ __('Register') }}</a>
-                </button>
               </div>
-            </div>
-            </div>
+
+              <div class="form-group row">
+                <div class="form-group row mb-6">
+                  <div class="col-md-4 offset-md-4">
+                    <button type="submit">
+                      {{ __('Register') }}
+                    </button>
+                  </div>
+                </div>
+              </div>
           </form>
         </div>
       </div>

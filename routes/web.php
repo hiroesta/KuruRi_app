@@ -32,3 +32,10 @@ Route::get('group/create','GroupController@create')->name('create');
 
 Route::post('group','GroupController@store')->name('group_create');
 //グループ作成画面のデータ作成
+
+Route::get('group/{id}/show','GroupController@show')->name('group_profile');
+//グループプロフィールを表示
+
+Route::get('groups/{id}/edit','GroupController@edit')->name('group_name');
+
+Route::post('groups/{id}/edit','GroupController@update');
