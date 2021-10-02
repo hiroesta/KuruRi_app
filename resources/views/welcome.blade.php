@@ -97,7 +97,7 @@
                 </div>
                 <form action="{{ route('group_profile','','') }}"></form>
                 <div>
-                    <button>加入する</button>
+                    <button>詳細へ</button>
                 </div>
                 </div>
                 @endforeach
