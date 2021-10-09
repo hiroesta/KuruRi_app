@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class CategoriesSeeder extends Seeder
 {
@@ -12,24 +12,30 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'id'=>'1',
-            'name'=>'サッカー'
-     ],[
-        'id'=>'2',
-        'name'=>'野球'
- ],[
-    'id'=>'3',
-    'name'=>'バスケ'
-],[
-    'id'=>'4',
-    'name'=>'軽音'
-],[
-    'id'=>'5',
-    'name'=>'イベント'
-],[
-    'id'=>'6',
-    'name'=>'バレー'
-]);
+
+        $Category = Category::create([
+            'id' => '1',
+            'name' => 'サッカー'
+        ]);
+        $Category = Category::create([
+            'id' => '2',
+            'name' => '野球'
+        ]);
+        $Category = Category::create([
+            'id' => '3',
+            'name' => 'バスケ'
+        ]);
+        $Category = Category::create([
+            'id' => '4',
+            'name' => '軽音'
+        ]);
+        $Category = Category::create([
+            'id' => '5',
+            'name' => 'イベント'
+        ]);
+        $Category = Category::create([
+            'id' => '6',
+            'name' => 'バレー'
+        ]);
     }
 }
