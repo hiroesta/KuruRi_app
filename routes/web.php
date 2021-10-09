@@ -56,6 +56,8 @@ Route::post('group/{id}/info/send','GroupController@infoSend')->name('group_info
 
 Route::get('group/info/{id}/edit','GroupController@infoEdit')->name('group_info_edit');
 
+Route::post('group/info/{id}/edit','GroupController@infoUpdate')->name('group_info_update');
+
 Route::delete('group/{id}/info/delete','GroupController@infoDestroy')->name('group_info_delete');
 
 Route::delete('group/{id}/member/delete','GroupController@memberDestroy')->name('group_member_delete');

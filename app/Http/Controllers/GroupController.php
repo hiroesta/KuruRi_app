@@ -113,14 +113,16 @@ class GroupController extends Controller
     public function infoEdit($id)
     {
         $info = GroupInformations::find($id);
-        return view('group.infoEdit', ['info' => $info]);
+        return view('groups.infoEdit', ['info' => $info]);
     }
 
     public function infoUpdate(Request $request)
     {
-        $info = new GroupInformations();
-        $info->content = $request->content;
-        $info->save();
+        $infoId=$request->id;
+        
+        GroupInformations::find($infoId)->update([
+            'content'=>$request->content
+        ]);
 
         return redirect()->back()->with(['message' => '変更しました！']);
     }
