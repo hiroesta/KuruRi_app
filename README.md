@@ -76,3 +76,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# KuruRi
+KuruRiとは、大学生・社会人サークル向けのグループ管理サービスのこと
+
+# Demo
+<link href="../images/homepage.png">
+会員はサークルを探したり、気になったサークルの詳細を閲覧できたりする
+
+<link href="../images/group_show_page.png">
+サークルの情報をもとに加入を検討する
+
+<link href="../images/group_info_page.png">
+加入した後は、サークルから来るお知らせを受け取って活動に参加する
+
+<link href="../images/group_list_page.png">
+サークルに加入している人の一覧がみれ、どんな人が入っているのかなど、入る前にしっかりリサーチができる
+
+管理者はこのページで、サークル会員を管理することができる。
+
+# Feature
+大学生や社会人のサークルにフォーカスを当てたサービスで、事前にサークルの会員を知ることができ、グループの雰囲気や年齢層などをしっかり把握することができるため、安心かつ正確なサークル選択を行うことができる。
+
+# Dependency
+KuruRiの開発環境
+
+- PHP (>= 7.0)
+- Laravel 6.0
+- MySQL
+- jQuery
+- Bootstrap
+- Heroku
+
