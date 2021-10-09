@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{ __('Register') }}</div>
+        <div class="card-header  text-white bg-dark">{{ __('新規サークル作成') }}</div>
 
         <div class="card-body">
           <form method="POST" action="{{ route('group_create') }}">
@@ -49,20 +49,19 @@
                   @endforeach
                 </select>
               </div>
+            </div>
+            <div class="text-right" style="width:18rem;">
+            <button type="submit" class="btn btn-primary">
+              {{ __('Register') }}
+            </button>
+            </div>
 
-              <div class="form-group row">
-                <div class="form-group row mb-6">
-                  <div class="col-md-4 offset-md-4">
-                    <button type="submit">
-                      {{ __('Register') }}
-                    </button>
-                  </div>
-                </div>
-              </div>
-          </form>
         </div>
+
+        </form>
       </div>
     </div>
   </div>
+</div>
 </div>
 @endsection

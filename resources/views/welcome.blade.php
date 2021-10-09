@@ -87,20 +87,14 @@
                 KuruRi
             </div>
 
-                @foreach($groups as $group)
-                <div class="card">
-                <div class="card-header">
-                    {{$group->name}}
-                </div>
-                <div>
-                    {{$group->information}}
-                </div>
-                <form action="{{ route('group_profile','','') }}"></form>
-                <div>
-                    <button>詳細へ</button>
-                </div>
-                </div>
-                @endforeach
+            <div class="links">
+                <a href="{{ route('create') }}">
+                    Create Group
+                </a>
+                <a href="{{ route('about') }}">
+                    About This
+                </a>
+            </div>
             
             <!--
                 <div class="links">

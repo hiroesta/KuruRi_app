@@ -5,13 +5,14 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">Dashboard</div>
+        <div class="card-header  text-white bg-dark">{{$user->name}}のプロフィール</div>
 
         @if(Session::has('message'))
         <div>変更しました</div>
-        <button><a href="{{route('home')}}">ホームに戻る</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{route('home')}}">ホームに戻る</a></button>
         @else
-        <form method="POST" action="http://localhost:8000/members/{id}/edit">
+        <div class="card-body">
+        <form method="POST" action="{{ route('user_update',Auth::id(),false) }}">
           @csrf
           <div>
             名前：<input type="text" name='name' value="{{ $user->name }}" />
@@ -33,9 +34,11 @@
             自己紹介文：<input type="textarea" name='introduction' value="{{$user->introduction}}">
           </div>
 
-          <button type="submit">変更</button>
+          <button type="submit"class="btn btn-primary btn-sm">変更</button>
         </form>
+      </div>
         @endif
+        
         
       </div>
     </div>

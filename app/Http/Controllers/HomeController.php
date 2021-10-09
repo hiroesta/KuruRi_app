@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Group;
 use Illuminate\Support\Facades\Auth; 
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -27,12 +28,17 @@ class HomeController extends Controller
 
     public function index()
     {
-        $groups= Group::all();
-        return view('welcome',['groups'=>$groups]);
+        return view('welcome');
     }
 
     public function home()
     {
-        return view('home');
+        $groups= Group::all();
+        $userId=Auth::id();
+        return view('home',['groups'=>$groups],compact('userId'));
+    }
+
+    public function about(){
+        return view('about');
     }
 }
