@@ -13,12 +13,14 @@ class CreateGroupInformation extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('group_informations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('group_id');
             $table->string('content');
             $table->timestamps();
         });
+        */
     }
 
     /**
