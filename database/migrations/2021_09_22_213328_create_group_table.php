@@ -19,7 +19,6 @@ class CreateGroupTable extends Migration
             $table->string('information');
             $table->integer('category_id');
             $table->integer('master_id');
-            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
