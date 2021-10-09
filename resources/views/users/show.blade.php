@@ -6,7 +6,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{$user->name}}</div>
+        <div class="card-header  text-white bg-dark">{{$user->name}}</div>
 
         <div class="card-body">
           @if (session('status'))
@@ -25,10 +25,12 @@
               自己紹介文：{{$user->introduction}}
             </li>
           </ul>
-          <button>
-            <a href="{{route('edit',Auth::id(),false)}}">編集</a>
-          </button>
 
+          @if($userId == $user->id)
+          <button class="btn btn-primary btn-sm">
+            <a style="color: white; text-decoration: none;" href="{{route('edit',Auth::id(),false)}}">編集</a>
+          </button>
+          @endif
         </div>
       </div>
     </div>
