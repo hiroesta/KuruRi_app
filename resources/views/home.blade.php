@@ -13,11 +13,8 @@
             <div class="card w-25 h-100 mt-1 mr-1 d-inline-block" style="height:170px !important;">
                 <div class="card-header  text-white bg-dark" style="max-height:50px; overflow: hidden;   text-overflow: ellipsis; white-space: nowrap;">{{$group->name}}</div>
                 <div class="card-body" style="max-height:200px; max-width:200px;">
-                    <div style="display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;">
-                        {{$group->information}}
+                    <div style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2; overflow: hidden;">
+                    <div style="height: 45px;">{{$group->information}}</div>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary btn-sm">

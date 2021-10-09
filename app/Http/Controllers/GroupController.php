@@ -29,7 +29,7 @@ class GroupController extends Controller
 
         $group->save();
 
-        return redirect("/")->back()->with(['message' => '作成しました！']);
+        return redirect()->back()->with(['message' => '作成しました！']);
     }
 
     public function show($id)
